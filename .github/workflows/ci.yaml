@@ -10,17 +10,16 @@ jobs:
         - name: 🐢 Setup Node   # Installs Node.js using the version defined in your .nvmrc file or your specified version, This ensures consistent Node version across machines.
           uses: actions/setup-node@v4
           with:
-            node-version-file: '.nvmrc'
+            node-version-file: 22.15.0
 
         - name: 🏗️ Install Dependencies   # Installs the project dependencies from package.json
           run: npm install
 
         - name: 🧪 Test   # Runs your test suite via the custom script test:local defined in your package.json.
-          run: npm run test:local
+          run: npm run wdio
 
-        - name: 📦 Upload Logs    # If any step fails, this will: Upload your test logs or screenshots stored in the logs/ folder. This helps with debugging failed CI runs.
+        - name: 📦 allure Reports    # allure reports configuration
           uses: actions/upload-artifact@v4
-          if: failure()
           with:
-            name: logs
-            path: logs
+            name: allureReport
+            path: ./allure-report
