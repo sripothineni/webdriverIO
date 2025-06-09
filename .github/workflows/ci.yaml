@@ -10,7 +10,7 @@ jobs:
         - name: 🐢 Setup Node   # Installs Node.js using the version defined in your .nvmrc file or your specified version, This ensures consistent Node version across machines.
           uses: actions/setup-node@v4
           with:
-            node-version-file: 22.15.0
+            node-version-file: 22
 
         - name: 🏗️ Install Dependencies   # Installs the project dependencies from package.json
           run: npm install
