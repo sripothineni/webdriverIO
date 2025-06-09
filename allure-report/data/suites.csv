@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"checking the webtable contesnt through tableHelper","5931","Handling webtable with reusable methods","","Sun Jun 08 14:16:45 CEST 2025","passed","Sun Jun 08 14:16:51 CEST 2025","","feature: working with webtable","",""
+"","3933","handling webtable","","Sun Jun 08 14:16:41 CEST 2025","passed","Sun Jun 08 14:16:45 CEST 2025","","feature: working with webtable","",""
