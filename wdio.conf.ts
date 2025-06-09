@@ -16,7 +16,7 @@
 
 import app_data from './util/appData';
 
-let baseUrl=app_data.url;
+let baseUrl = app_data.url;
 
 export const config: WebdriverIO.Config = {
     //
@@ -73,14 +73,21 @@ export const config: WebdriverIO.Config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
-        // }, 
-        // {
-        //     browserName: 'firefox'
-        // },
-        // {
-        //     browserName: 'msedge'
-    }],
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: [
+                '--headless=new',
+                '--no-sandbox',
+                '--disable-dev-shm-usage'
+            ]
+        }
+            // }, 
+            // {
+            //     browserName: 'firefox'
+            // },
+            // {
+            //     browserName: 'msedge'
+        }],
 
     //
     // ===================
