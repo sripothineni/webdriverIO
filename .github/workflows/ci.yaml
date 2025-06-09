@@ -18,8 +18,14 @@ jobs:
         - name: 🧪 Test   # Runs your test suite via the custom script test:local defined in your package.json.
           run: npm run wdio
 
-        - name: 📦 allure Reports    # allure reports configuration
-          uses: actions/upload-artifact@v4
+        - name: 🧪 Generate Allure Report
+          if: always()  # Ensures it runs even if tests fail
+          run: |
+          npx allure generate allure-results --clean -o allure-report
+  
+        - name: 📦 Upload Allure Report
+          if: always()
+            uses: actions/upload-artifact@v4
           with:
-            name: allureReport
-            path: ./allure-report
+            name: allure-report
+            path: allure-report
